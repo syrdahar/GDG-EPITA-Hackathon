@@ -1,0 +1,26 @@
+{
+  "name": "eduquest-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EduQuest AI - Transforme un PDF de cours en jeu vidéo éducatif partageable via une architecture multi-agents.",
+  "type": "module",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "install:all": "npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.0"
+  },
+  "overrides": {
+    "shell-quote": "^1.8.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

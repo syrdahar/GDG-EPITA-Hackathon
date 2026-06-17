@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm view *)",
+      "Bash(npm audit *)",
+      "Bash(npm run *)",
+      "Bash(npm start *)",
+      "Bash(curl -s http://localhost:3001/api/health)",
+      "Bash(curl -s http://localhost:3001/)",
+      "Bash(curl -s http://localhost:3001/play/abc123)",
+      "Bash(node -e \"const p=require\\('./node_modules/@google/genai/package.json'\\);console.log\\('version',p.version\\);console.log\\('main',p.main\\);console.log\\('types',p.types\\);console.log\\('exports',JSON.stringify\\(p.exports\\)\\)\")",
+      "Bash(node --check server/src/gemini.js)"
+    ]
+  }
+}

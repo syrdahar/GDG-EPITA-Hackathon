@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-ink text-slate-100 font-sans antialiased;
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.18), transparent 40%),
+    radial-gradient(circle at 85% 25%, rgba(34, 211, 238, 0.15), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(236, 72, 153, 0.12), transparent 45%);
+  background-attachment: fixed;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold
+      transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-neon-violet to-neon-pink text-white
+      shadow-glow hover:brightness-110 hover:scale-[1.02] active:scale-95;
+  }
+  .btn-cyan {
+    @apply btn bg-gradient-to-r from-cyan-400 to-neon-violet text-white
+      shadow-glow-cyan hover:brightness-110 hover:scale-[1.02] active:scale-95;
+  }
+  .btn-ghost {
+    @apply btn bg-white/5 border border-white/10 text-slate-200 hover:bg-white/10;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1
+      text-xs font-medium text-slate-200 border border-white/10;
+  }
+}
+
+/* Scrollbar discrète */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/20;
+}
